@@ -1,12 +1,10 @@
-<div id="<%= dom_id stock %>">
-  <p>
-    <strong>Ticker:</strong>
-    <%= stock.ticker %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= stock.user_id %>
-  </p>
-
-</div>
+<tr>
+  <!--<td><%#= stock['symbol'] %></td>
+  <td><%#= stock['company_name'] %></td>
+  <td>$<%#= number_with_precision(stock['price'], :precision => 2, :delimiter => ',') %></td>-->
+  <td><%= link_to stock.ticker, stock %></td>
+  <td><%= stock.ticker %></td>
+  <td><%= stock.ticker %></td>
+  <td><%= link_to "Edit", edit_stock_path(stock) %></td>
+  <td><%= link_to "Delete", stock, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>
+</tr>

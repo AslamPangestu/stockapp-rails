@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @stock %>
+<%= @stock.ticker %>
+<%= @stock.ticker %>
+<%= @stock.ticker %>
+<%= @stock.ticker %>
 
 <div>
-  <%= link_to "Edit this stock", edit_stock_path(@stock) %> |
-  <%= link_to "Back to stocks", stocks_path %>
-
-  <%= button_to "Destroy this stock", @stock, method: :delete %>
+  <%= link_to "Edit this stock", edit_stock_path(@stock), class: 'btn btn-secondary' %> |
+  <%= link_to "Delete this stock", @stock, class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>

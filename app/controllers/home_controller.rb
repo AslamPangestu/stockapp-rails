@@ -6,7 +6,6 @@ class HomeController < ApplicationController
     ticker = params[:ticker]
 
     if ticker
-      puts ticker
       url = URI("https://#{Rails.application.credentials.api[:url]}/stock-quote?symbol=#{ticker.upcase}%3ANASDAQ&language=en")
 
       http = Net::HTTP.new(url.host, url.port)
