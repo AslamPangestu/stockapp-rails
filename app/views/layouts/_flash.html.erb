@@ -1,0 +1,10 @@
+<br/> 
+<% flash.each do |name, message|%>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <%= content_tag(:div, message) %>
+  </div>
+<% end %>
+
+<!--<p class="notice"><%#= notice %></p>-->
+<!--<p class="alert"><%#= alert %></p>-->
