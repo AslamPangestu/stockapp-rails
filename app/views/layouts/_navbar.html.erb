@@ -12,12 +12,23 @@
         <li class="nav-item">
           <%= link_to 'About Me', about_me_path, class: "nav-link #{'active' if current_page?(about_me_path)}" %>
         </li>
-        <li class="nav-item">
-          <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link #{'active' if current_page?(new_user_registration_path)}" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Login', new_user_session_path, class: "nav-link #{'active' if current_page?(new_user_session_path)}" %>
-        </li>
+
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Profile', edit_user_registration_path, class: "nav-link #{'active' if current_page?(edit_user_registration)}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link #{'active' if current_page?(new_user_registration_path)}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Login', new_user_session_path, class: "nav-link #{'active' if current_page?(new_user_session_path)}" %>
+          </li>
+        <% end %>
+
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
